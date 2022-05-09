@@ -1,7 +1,7 @@
 # mailx-centos
 Configuration for sending mail using mailx in CentOS
 
-**2 ways:** (1) Set environment in global-config(*mail.rc*) file, or (2) Set inline environment 
+**2 ways:** (1) Set environment in global-config(*mail.rc*) file, or (2) Set in-line environment 
 
 ### (1) Copy and paste the snippet in mailx config file 
 > location: ***/etc/mail.rc***
@@ -23,7 +23,7 @@ cat -v /file/path/ | mail -v -s 'Mail-Subject' -a /attached/file/path/ example@e
 ```
 
 ---
-### (2) To send inline mail:
+### (2) To send in-line mail:
 
 ```
 cat -v /file/path/ | mail -v -S smtp-use-starttls -S ssl-verify=ignore -S smtp-auth=login -S smtp=smtp://smtp.gmail.com:587 -S nss-config-dir=/etc/pki/nssdb/ -S smtp-auth-user='AUTH_USER_MAIL' -S smtp-auth-password='AUTH_USER_PASSWORD' -s 'Mail-Subject' -a /attached/file/path/ example@example.com
